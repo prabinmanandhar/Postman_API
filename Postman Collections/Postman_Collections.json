@@ -423,67 +423,6 @@
 					"response": []
 				},
 				{
-					"name": "File Upload",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "edc4d249-57bb-4db5-9c2b-4162e01de9c8",
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "f6a6245b-3177-4247-b62f-af031a6190f2",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "file",
-							"file": {}
-						},
-						"url": "https://postman-echo.com/post"
-					},
-					"response": []
-				},
-				{
-					"name": "File Upload Using Binary",
-					"id": "ab7b34fb-54ea-4778-a10f-71e2cab62338",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "file",
-							"file": {
-								"src": "postman-cloud:///1efdfc09-c424-4b80-8e55-e520b581d4ad"
-							}
-						},
-						"url": "https://postman-echo.com/post"
-					},
-					"response": []
-				},
-				{
 					"name": "Cookies Using Postman",
 					"id": "5732d082-69fe-40a6-a34b-19eb6a875555",
 					"protocolProfileBehavior": {
