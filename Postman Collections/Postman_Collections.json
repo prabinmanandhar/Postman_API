@@ -52,37 +52,6 @@
 					"response": []
 				},
 				{
-					"name": "Get Booking IDs",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "501dc2d4-bea4-4520-be88-28e6b0b4ac94",
-								"exec": [
-									"pm.test('The Status Code is 200', () => {\r",
-									"    pm.response.to.have.status(200)\r",
-									"})"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "26dd32fe-8658-4e44-a51e-863fcec1737a",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": "https://restful-booker.herokuapp.com/booking"
-					},
-					"response": []
-				},
-				{
 					"name": "Create Booking",
 					"event": [
 						{
@@ -126,6 +95,37 @@
 					"response": []
 				},
 				{
+					"name": "Get Booking IDs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "501dc2d4-bea4-4520-be88-28e6b0b4ac94",
+								"exec": [
+									"pm.test('The Status Code is 200', () => {\r",
+									"    pm.response.to.have.status(200)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "26dd32fe-8658-4e44-a51e-863fcec1737a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": "https://restful-booker.herokuapp.com/booking"
+					},
+					"response": []
+				},
+				{
 					"name": "Create Booking Copy",
 					"event": [
 						{
@@ -143,92 +143,6 @@
 						}
 					],
 					"id": "0194d50d-a2de-4ea5-9bcd-dbae49ca0be7",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"firstname\" : \"{{$randomFirstName}}\",\r\n    \"lastname\" : \"{{$randomLastName}}\",\r\n    \"totalprice\" : 111,\r\n    \"depositpaid\" : true,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2018-01-01\",\r\n        \"checkout\" : \"2019-01-01\"\r\n    },\r\n    \"additionalneeds\" : \"Breakfast\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://restful-booker.herokuapp.com/booking",
-						"description": "Generated from cURL: curl -X POST \\\r\n  https://restful-booker.herokuapp.com/booking \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n    \"firstname\" : \"Jim\",\r\n    \"lastname\" : \"Brown\",\r\n    \"totalprice\" : 111,\r\n    \"depositpaid\" : true,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2018-01-01\",\r\n        \"checkout\" : \"2019-01-01\"\r\n    },\r\n    \"additionalneeds\" : \"Breakfast\"\r\n}'"
-					},
-					"response": []
-				},
-				{
-					"name": "Create Booking Copy 2",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "3f7627db-27b1-4a9e-9c4d-079f4c86850e",
-								"exec": [
-									"var jsonData = pm.response.json()\r",
-									"console.log(jsonData.bookingid)\r",
-									"pm.environment.set('BookingID_env',jsonData.bookingid)"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "16496bdf-8757-4ca1-a2db-1f3554199c95",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"firstname\" : \"{{$randomFirstName}}\",\r\n    \"lastname\" : \"{{$randomLastName}}\",\r\n    \"totalprice\" : 111,\r\n    \"depositpaid\" : true,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2018-01-01\",\r\n        \"checkout\" : \"2019-01-01\"\r\n    },\r\n    \"additionalneeds\" : \"Breakfast\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://restful-booker.herokuapp.com/booking",
-						"description": "Generated from cURL: curl -X POST \\\r\n  https://restful-booker.herokuapp.com/booking \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n    \"firstname\" : \"Jim\",\r\n    \"lastname\" : \"Brown\",\r\n    \"totalprice\" : 111,\r\n    \"depositpaid\" : true,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2018-01-01\",\r\n        \"checkout\" : \"2019-01-01\"\r\n    },\r\n    \"additionalneeds\" : \"Breakfast\"\r\n}'"
-					},
-					"response": []
-				},
-				{
-					"name": "Create Booking Copy 3",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "3f7627db-27b1-4a9e-9c4d-079f4c86850e",
-								"exec": [
-									"var jsonData = pm.response.json()\r",
-									"console.log(jsonData.bookingid)\r",
-									"pm.environment.set('BookingID_env',jsonData.bookingid)"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "76d277d8-c909-42de-8ca0-2194b37b7f8b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
