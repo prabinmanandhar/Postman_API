@@ -615,6 +615,47 @@
 						"url": "https://postman-echo.com/basic-auth"
 					},
 					"response": []
+				},
+				{
+					"name": "Basic Auth Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "501dc2d4-bea4-4520-be88-28e6b0b4ac94",
+								"exec": [
+									"const jsonData = pm.response.json()\r",
+									"console.log(jsonData.authenticated)\r",
+									"pm.test('The Status Code is 200', () => {\r",
+									"    pm.response.to.have.status(200)\r",
+									"})\r",
+									"\r",
+									"pm.test('Verify the User is authenticated using Basic Authentication.', () => {\r",
+									"    pm.expect(jsonData.authenticated).eql(true)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "59e518b8-b32b-44c5-afb3-df6f7bbd3469",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "postman",
+								"password": "password"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "https://postman-echo.com/basic-auth"
+					},
+					"response": []
 				}
 			],
 			"id": "605fce13-235e-485c-b0f6-4b7fef0b9852"
